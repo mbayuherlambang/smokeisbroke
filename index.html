@@ -165,13 +165,10 @@
         </div>
     </div>
 
-    <script>
-        // Set launch date (ganti dengan tanggal launch yang sebenarnya)
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 1); // 1 hari dari sekarang
-        launchDate.setHours(launchDate.getHours() + 14);
-        launchDate.setMinutes(launchDate.getMinutes() + 6);
-        launchDate.setSeconds(launchDate.getSeconds() + 23);
+        <script>
+        // GANTI TANGGAL LAUNCH DI SINI
+        // Format: "Bulan Tanggal, Tahun Jam:Menit:Detik"
+        const launchDate = new Date("May 22, 2026 08:00:00");
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -188,12 +185,11 @@
             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
             if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<h2>🚀 LAUNCHED! 🚀</h2>';
+                document.getElementById('countdown').innerHTML = '<h2 style="font-size:3rem; margin-top:20px;"> LAUNCHED! 🚀</h2>';
+                document.getElementById('countdown').style.display = 'block';
             }
         }
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
-</body>
-</html>
